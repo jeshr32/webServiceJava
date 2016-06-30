@@ -13,6 +13,15 @@ import java.sql.Date;
  * @author Lenovo
  */
 public class Venta implements Serializable{
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     private Cliente cliente;
     private Integer neto;
     private Integer iva;

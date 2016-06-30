@@ -11,9 +11,10 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Lenovo
+ * @author jesu
  */
-public abstract class ConnectMSSQLServer {
+public abstract class ConnectMySql {
+    
     private Connection con;
 
     public Connection getCon() {
@@ -21,13 +22,13 @@ public abstract class ConnectMSSQLServer {
     }
 
 
-    public ConnectMSSQLServer()
+    public ConnectMySql()
     {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String db_connect_string = "jdbc:sqlserver://sqlserver:1433;databaseName=manolo";
+            Class.forName("com.mysql.jdbc.Driver");
+            String db_connect_string = "jdbc:mysql://localhost:3306/manolo";
 
-            con = DriverManager.getConnection(db_connect_string,"sa", "bennupass.");
+            con = DriverManager.getConnection(db_connect_string,"root", "1234");
 
 
         } catch (SQLException e) {
@@ -40,4 +41,4 @@ public abstract class ConnectMSSQLServer {
     public void desconectar(){
         con = null;
     }
-    }
+}

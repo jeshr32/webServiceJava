@@ -6,6 +6,7 @@
 package dao;
 
 import db.ConnectMSSQLServer;
+import db.ConnectMySql;
 import dto.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ import java.sql.PreparedStatement;
  *
  * @author Lenovo
  */
-public class AccesoImp extends ConnectMSSQLServer implements Iacceso {
+public class AccesoImp extends ConnectMySql implements Iacceso {
 
     @Override
     public Boolean registroCliente(Object object) {
@@ -22,7 +23,7 @@ public class AccesoImp extends ConnectMSSQLServer implements Iacceso {
         
         try {
             Connection con = super.getCon();
-            String query = "insert into cliente (rut,nombres,apellido_p,apellido_m,email,direccion,comuna)"
+            String query = "insert into cliente (rut,nombres,apellido_p,apellido_m,email,direccion,comuna_id)"
                     + "values (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, cliente.getRut());
@@ -31,7 +32,7 @@ public class AccesoImp extends ConnectMSSQLServer implements Iacceso {
             ps.setString(4, cliente.getMaterno());
             ps.setString(5, cliente.getEmail());
             ps.setString(6, cliente.getAddress());
-            ps.setString(7, "1");
+            ps.setInt(7, cliente.getComuna().getId());
             try {
                 ps.executeUpdate();
                 desconectar();

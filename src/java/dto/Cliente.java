@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author Lenovo
  */
 public class Cliente implements Serializable{
+    private Integer id;
     private String rut;
     private String nombre;
     private String paterno;
@@ -19,6 +20,14 @@ public class Cliente implements Serializable{
     private String email;
     private String address;
     private Comuna comuna;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Cliente(String rut, String nombre, String paterno, String materno, String email, String address) {
         this.rut = rut;

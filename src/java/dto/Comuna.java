@@ -12,6 +12,21 @@ import java.io.Serializable;
  * @author Lenovo
  */
 public class Comuna implements Serializable{
+    private Integer id;
+
+    public Comuna(Integer id, String nombre, Region region) {
+        this.id = id;
+        this.nombre = nombre;
+        this.region = region;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     private String nombre;
     private Region region;
 
