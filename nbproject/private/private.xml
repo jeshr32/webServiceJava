@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/src/java/dao/Iacceso.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/src/java/dao/AccesoImp.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/src/java/service/java/WebServiceJava.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/src/java/db/ConnectMSSQLServer.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/web/index.html</file>
-            <file>file:/C:/Users/Lenovo/Documents/NetBeansProjects/WebServer/src/java/dto/Cliente.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -13,8 +13,40 @@ import java.sql.Date;
  * @author Lenovo
  */
 public class Venta implements Serializable{
+
+    
     private Integer id;
 
+    private Cliente cliente;
+    private Integer neto;
+    private Integer iva;
+    private Integer total;
+    private Date fecha;
+    private Boolean vigente;
+    private Date despacho;
+
+    public Venta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Date getDespacho() {
+        return despacho;
+    }
+
+    public void setDespacho(Date despacho) {
+        this.despacho = despacho;
+    }
+
+    public Venta(Integer id, Cliente cliente, Integer neto, Integer iva, Integer total, Date fecha, Boolean vigente) {
+        this.id = id;
+        this.cliente = cliente;
+        this.neto = neto;
+        this.iva = iva;
+        this.total = total;
+        this.fecha = fecha;
+        this.vigente = vigente;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -22,13 +54,6 @@ public class Venta implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
-    private Cliente cliente;
-    private Integer neto;
-    private Integer iva;
-    private Integer total;
-    private Date fecha;
-    private Boolean vigente;
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -75,6 +100,16 @@ public class Venta implements Serializable{
 
     public void setVigente(Boolean vigente) {
         this.vigente = vigente;
+    }
+
+    public Venta(Cliente cliente, Integer neto, Integer iva, Integer total, Date fecha, Boolean vigente, Date despacho) {
+        this.cliente = cliente;
+        this.neto = neto;
+        this.iva = iva;
+        this.total = total;
+        this.fecha = fecha;
+        this.vigente = vigente;
+        this.despacho = despacho;
     }
     
     

@@ -21,6 +21,10 @@ public class Cliente implements Serializable{
     private String address;
     private Comuna comuna;
 
+    public Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getId() {
         return id;
     }
@@ -36,6 +40,17 @@ public class Cliente implements Serializable{
         this.materno = materno;
         this.email = email;
         this.address = address;
+    }
+
+    public Cliente(Integer id, String rut, String nombre, String paterno, String materno, String email, String address) {
+        this.id = id;
+        this.rut = rut;
+        this.nombre = nombre;
+        this.paterno = paterno;
+        this.materno = materno;
+        this.email = email;
+        this.address = address;
+     
     }
     
     

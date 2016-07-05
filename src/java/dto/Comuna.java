@@ -20,6 +20,11 @@ public class Comuna implements Serializable{
         this.region = region;
     }
 
+    public Comuna(Integer id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public Integer getId() {
         return id;
     }

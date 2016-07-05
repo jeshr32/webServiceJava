@@ -12,6 +12,11 @@ import java.io.Serializable;
  * @author Lenovo
  */
 public class Region implements Serializable{
+
+    public Region(Integer id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
     private Integer id;
 
     public Integer getId() {
