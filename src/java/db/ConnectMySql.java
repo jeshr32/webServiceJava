@@ -28,7 +28,7 @@ public abstract class ConnectMySql {
             Class.forName("com.mysql.jdbc.Driver");
             String db_connect_string = "jdbc:mysql://localhost:3306/manolo";
 
-            con = DriverManager.getConnection(db_connect_string,"root", "1234");
+            con = DriverManager.getConnection(db_connect_string,"root", "");
 
 
         } catch (SQLException e) {

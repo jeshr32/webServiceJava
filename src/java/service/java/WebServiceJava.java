@@ -27,14 +27,12 @@ public class WebServiceJava {
      * This is a sample web service operation
      */
     @WebMethod(operationName = "RegistroCliente")
-    public String RegistroCliente(@WebParam(name = "id") String id,@WebParam(name = "rut") String rut , @WebParam(name = "nombres") String nombres, @WebParam(name = "apellido_p") String apellido_p ,@WebParam(name = "apellido_m") String apellido_m ,@WebParam(name = "email") String email, @WebParam(name = "direccion") String direccion) {
+    public String RegistroCliente(@WebParam(name = "rut") String rut , @WebParam(name = "nombres") String nombres, @WebParam(name = "apellido_p") String apellido_p ,@WebParam(name = "apellido_m") String apellido_m ,@WebParam(name = "email") String email, @WebParam(name = "direccion") String direccion, @WebParam(name = "idComuna") Integer idComuna) {
         Cliente cliente= new Cliente(rut,nombres,apellido_p,apellido_m,email,direccion);
-        Region region = new Region(13,"RM");
-        Comuna comuna = new Comuna(1,"Santiago",region);
-        cliente.setComuna(comuna);
         Iacceso acc = new AccesoImp();
+        cliente.setComuna(acc.getComuna(idComuna));
         if(acc.registroCliente(cliente)){
-            return "Cliente " + id + " registrado!";
+            return "Cliente " + rut + " registrado!";
         }else{
             return "Error al registrar";
         }

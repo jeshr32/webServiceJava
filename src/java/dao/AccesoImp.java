@@ -111,20 +111,20 @@ public class AccesoImp extends ConnectMySql implements Iacceso {
             return false;
         }
     }
-    
-    public Cliente getCliente(String id){
+    @Override
+    public Cliente getCliente(Integer id){
         Cliente cliente = null;
         try {
             Connection con = super.getCon();
             String query = "select * from cliente where id = ?";
                     
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, id);
+            ps.setInt(1, id);
             
             ResultSet rs = ps.executeQuery(query);
             while (rs.next()) {
                cliente = new Cliente(rs.getInt("id"),rs.getString("rut"),rs.getString("nombres"), rs.getString("apellido_p"), rs.getString("apellido_m "), rs.getString("email"),rs.getString("direccion"));
-               cliente.setComuna(getComuna(rs.getString("comuna_id")));
+               cliente.setComuna(getComuna(rs.getInt("comuna_id")));
             }
 
         } catch (Exception e) {
@@ -134,18 +134,18 @@ public class AccesoImp extends ConnectMySql implements Iacceso {
         
         return cliente;
     }
-    
-    public Comuna getComuna(String id){
+    @Override
+    public Comuna getComuna(Integer id){
         Comuna comuna = null;
         try {
             Connection con = super.getCon();
             String query = "select * from comuna where id=?";
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, id);            
+            ps.setInt(1, id);            
             ResultSet rs = ps.executeQuery(query);
             while (rs.next()) {
                comuna = new Comuna(rs.getInt("id"),rs.getString("nombre")); 
-               comuna.setRegion(getRegion(rs.getString("region_id")));
+               comuna.setRegion(getRegion(rs.getInt("region_id")));
             }
 
         } catch (Exception e) {
@@ -155,14 +155,14 @@ public class AccesoImp extends ConnectMySql implements Iacceso {
         
         return comuna;
     }
-    
-    public Region getRegion(String id){
+    @Override
+    public Region getRegion(Integer id){
         Region region = null;
         try {
             Connection con = super.getCon();
             String query = "select * from region where id=?";
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, id);            
+            ps.setInt(1, id);            
             ResultSet rs = ps.executeQuery(query);
             while (rs.next()) {
                region = new Region(rs.getInt("id"),rs.getString("nombre"));                 
